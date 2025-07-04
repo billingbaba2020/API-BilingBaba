@@ -11,8 +11,10 @@ import io
 import uuid
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
-
+CORS(app, resources={r"/*": {"origins": [
+    "http://localhost:3000",
+    "https://billingbaba.com"
+]}}, supports_credentials=True)
 
 try:
     cred = credentials.Certificate("auth_key.json")
