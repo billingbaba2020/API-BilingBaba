@@ -11,7 +11,8 @@ import io
 import uuid
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app, supports_credentials=True)
+
 
 try:
     cred = credentials.Certificate("auth_key.json")
